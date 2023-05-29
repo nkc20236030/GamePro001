@@ -8,7 +8,7 @@ public class EnemyGenerator : MonoBehaviour
     float span = 1.0f;
     float delta = 0;
 
-    void Start()
+    void Update()
     {
         this.delta += Time.deltaTime;
         if (this.delta > this.span)

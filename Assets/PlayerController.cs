@@ -22,5 +22,7 @@ public class PlayerController : MonoBehaviour
 
         float y = Input.GetAxisRaw("Vertical");
         transform.position += new Vector3(0, y * speed, 0);
+
+
     }
 }

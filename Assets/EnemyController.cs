@@ -16,6 +16,11 @@ public class EnemyController : MonoBehaviour
     {
         transform.Translate(-0.01f, 0, 0);
 
+        if(transform.position.x < -12)
+        {
+            Destroy(gameObject);
+        }
+
         Vector2 p1 = transform.position;
         Vector2 p2 = this.MyChar_0. transform.position;
         Vector2 dir = p1 - p2;
