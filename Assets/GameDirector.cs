@@ -16,4 +16,9 @@ public class GameDirector : MonoBehaviour
     {
         this.Time_gauge.GetComponent<Image>().fillAmount -= 0.1f;
     }
+
+    void Update() 
+    {
+        
+    }
 }
