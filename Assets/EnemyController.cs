@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    GameObject MyChar_0;
+    GameObject Player;
 
     void Start()
     {
-        this.MyChar_0 = GameObject.Find("MyChar_0");
+        this.Player = GameObject.Find("Player");
     }
 
     void Update()
@@ -22,7 +22,7 @@ public class EnemyController : MonoBehaviour
         }
 
         Vector2 p1 = transform.position;
-        Vector2 p2 = this.MyChar_0. transform.position;
+        Vector2 p2 = this.Player. transform.position;
         Vector2 dir = p1 - p2;
         float d = dir.magnitude;
         float r1 = 0.5f;   
