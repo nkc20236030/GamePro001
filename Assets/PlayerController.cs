@@ -6,25 +6,28 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    //public Text speedText;
+    public Text distanceText; // 距離を表示するTextコンポーネント
+
+    private float distanceTraveled = 0f;
 
     Animator animator;
-    //float speed;           
-    //float axel;           
-    //int bdash;
 
     void Start()
     {
 
     animator = GetComponent<Animator>();
-        //speed = 0;
-        //axel = 0.02f;
-        //bdash = 1;
     }
 
     void Update()
     {
-        float z = Input.GetAxisRaw("Vertical");
+        float distancePerFrame = 60f * Time.deltaTime; // 1フレームあたりの進む距離
+        distanceTraveled += distancePerFrame; // 進んだ距離を更新
+
+        // 距離をテキストに表示
+        distanceText.text = "Distance: " + distanceTraveled.ToString("F2") + "km";
+    
+
+    float z = Input.GetAxisRaw("Vertical");
 
         if (z == 0)
         {
@@ -45,9 +48,6 @@ public class PlayerController : MonoBehaviour
 
         float y = Input.GetAxisRaw("Vertical");
         transform.position += new Vector3(0, y * speed, 0);
-
-        //float sokudo = speed * bdash;
-        //speedText.text = "速度 " + sokudo.ToString("F2") + " m/s";
 
     }
 }
